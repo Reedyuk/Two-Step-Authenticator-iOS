@@ -37,7 +37,12 @@ class KeyboardViewController: UIInputViewController {
     @objc func authButtonPressed() {
         print("here")
     }
-    
+    @IBAction func keyboardButtonPressed(_ sender: Any) {
+        let button = sender as! UIButton
+        let title = button.title(for: .normal)
+        (textDocumentProxy as UIKeyInput).insertText(title!)
+    }
+
     func loadInterface(){
         let keyboardNib = UINib(nibName: "Keyboard", bundle: nil)
         keyboardView = keyboardNib.instantiate(withOwner: self, options: nil)        [0] as! UIView
