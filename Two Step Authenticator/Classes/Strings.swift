@@ -9,5 +9,4 @@
 import Foundation
 
 public struct Strings {
-    static let characterDetailPlaceholder = "There is no description for this character"
 }

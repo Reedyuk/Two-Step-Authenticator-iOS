@@ -15,12 +15,6 @@ class KeyboardViewController: UIInputViewController {
     @IBOutlet weak var switchKeyboardButton: UIButton!
     @IBOutlet weak var authButton: UIButton!
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadInterface()
@@ -35,7 +29,8 @@ class KeyboardViewController: UIInputViewController {
         // The app has just changed the document's contents, the document context has been updated.
     }
     @objc func authButtonPressed() {
-        print("here")
+        let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy)
+        present(tokenListViewController, animated: true, completion: nil)
     }
     @IBAction func keyboardButtonPressed(_ sender: Any) {
         let button = sender as! UIButton
