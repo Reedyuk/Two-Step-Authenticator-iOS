@@ -30,7 +30,7 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
                                  Key(title: "J"),
                                  Key(title: "K"),
                                  Key(title: "L")]
-    static let thirdRowOfKeys = [SpecialKey(title: Strings.shift,
+    static let thirdRowOfKeys = [SpecialKey(title: Strings.KeyboardButtons.shift,
                                             image: nil,
                                             type: .shift),
                                  Key(title: "Z"),
@@ -43,16 +43,16 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
                                   SpecialKey(title: "",
                                              image: UIImage(named: "Backspace"),
                                              type: .backspace)]
-    static let fourthRowOfKeys = [SpecialKey(title: Strings.auth,
+    static let fourthRowOfKeys = [SpecialKey(title: Strings.KeyboardButtons.auth,
                                              image: nil,
                                              type: .token),
                                   SpecialKey(title: "",
                                              image: UIImage(named: "NextKeyboard"),
                                              type: .switchKeyboard),
-                                  SpecialKey(title: Strings.space,
+                                  SpecialKey(title: Strings.KeyboardButtons.space,
                                              image: nil,
                                              type: .spacebar),
-                                  SpecialKey(title: Strings.returnKey,
+                                  SpecialKey(title: Strings.KeyboardButtons.returnKey,
                                              image: nil,
                                              type: .returnKey)]
     static let keys = [KeyboardNodeViewController.firstRowOfKeys,

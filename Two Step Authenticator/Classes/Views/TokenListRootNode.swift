@@ -14,14 +14,14 @@ class TokenListRootNode: ASDisplayNode {
     let backButton = ASButtonNode()
     let tableNode: ASTableNode
     var tokenListViewController: TokenListViewController?
-    
+
     override init() {
         tableNode = ASTableNode()
         super.init()
         addSubnode(tableNode)
         tableNode.delegate = self
         tableNode.dataSource = self
-        backButton.setTitle("Back",
+        backButton.setTitle(Strings.ActionButtons.back,
                             with: UIFont.systemFont(ofSize: 12),
                             with: UIColor.blue,
                             for: .normal)

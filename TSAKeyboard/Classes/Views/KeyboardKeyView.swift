@@ -30,7 +30,7 @@ class KeyboardKeyView: ASCellNode {
         addSubnode(keyBackground)
         styleNode()
         var keyTitle = key.title
-        if ((key as? SpecialKey) == nil) {
+        if (key as? SpecialKey) == nil {
             keyTitle = Settings.sharedInstance.shiftEnabled ? keyTitle.uppercased() : keyTitle.lowercased()
         }
         title.attributedText = String.formatLabel(text: keyTitle,
@@ -58,7 +58,7 @@ class KeyboardKeyView: ASCellNode {
     func animateKeyPress() {
         UIView.animate(withDuration: 0.05, animations: {
             self.keyBackground.backgroundColor = self.highlightBackgroundColor
-        }, completion: { completed in
+        }, completion: { _ in
             self.keyBackground.backgroundColor = self.defaultBackgroundColor
         })
     }
@@ -68,18 +68,25 @@ class KeyboardKeyView: ASCellNode {
         if let imageView = self.imageView {
             stackLayout = ASStackLayoutSpec(direction: .vertical,
                                             spacing: 0,
-                                            justifyContent: .center, alignItems: .center, children: [imageView])
+                                            justifyContent: .center,
+                                            alignItems: .center,
+                                            children: [imageView])
         } else {
             stackLayout = ASStackLayoutSpec(direction: .vertical,
                                             spacing: 0,
-                                            justifyContent: .center, alignItems: .center, children: [title])
+                                            justifyContent: .center,
+                                            alignItems: .center,
+                                            children: [title])
         }
         let stackInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: defaultMargin,
                                                                 left: defaultMargin,
                                                                 bottom: defaultMargin,
                                                                 right: defaultMargin),
                                            child: stackLayout)
-        let backgroundInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0),
+        let backgroundInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0,
+                                                                     left: 0,
+                                                                     bottom: 1,
+                                                                     right: 0),
                                            child: keyBackground)
         return ASBackgroundLayoutSpec(child: stackInset, background: backgroundInset)
     }

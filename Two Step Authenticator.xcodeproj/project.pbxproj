@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00011262211AD17900CFD01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00011260211AD17900CFD01F /* Main.storyboard */; };
 		00011264211AD17B00CFD01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00011263211AD17B00CFD01F /* Assets.xcassets */; };
 		00011267211AD17B00CFD01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00011265211AD17B00CFD01F /* LaunchScreen.storyboard */; };
 		00011276211AD20700CFD01F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001126F211AD20700CFD01F /* Strings.swift */; };
@@ -33,6 +32,15 @@
 		000112B9211D721400CFD01F /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B7211D721400CFD01F /* Colours.swift */; };
 		000112BA211D79EC00CFD01F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001126F211AD20700CFD01F /* Strings.swift */; };
 		000112BC211D7A8900CFD01F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112BB211D7A8900CFD01F /* Settings.swift */; };
+		000112C0211DBC2E00CFD01F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112BF211DBC2E00CFD01F /* HomeViewController.swift */; };
+		000112C2211DD01E00CFD01F /* TokensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C1211DD01E00CFD01F /* TokensViewController.swift */; };
+		000112C3211DD01E00CFD01F /* TokensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C1211DD01E00CFD01F /* TokensViewController.swift */; };
+		000112C5211DD0D100CFD01F /* TokensRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C4211DD0D100CFD01F /* TokensRootNode.swift */; };
+		000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C4211DD0D100CFD01F /* TokensRootNode.swift */; };
+		000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C7211DFFF700CFD01F /* AddTokenViewController.swift */; };
+		000112C9211E017200CFD01F /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C7211DFFF700CFD01F /* AddTokenViewController.swift */; };
+		000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* TokenCellNode.swift */; };
+		000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* TokenCellNode.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -63,7 +71,6 @@
 
 /* Begin PBXFileReference section */
 		00011259211AD17900CFD01F /* Two Step Authenticator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Two Step Authenticator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00011261211AD17900CFD01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00011263211AD17B00CFD01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00011266211AD17B00CFD01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00011268211AD17B00CFD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +90,11 @@
 		000112AE211CB81500CFD01F /* SpecialKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
 		000112B7211D721400CFD01F /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		000112BB211D7A8900CFD01F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		000112BF211DBC2E00CFD01F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		000112C1211DD01E00CFD01F /* TokensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewController.swift; sourceTree = "<group>"; };
+		000112C4211DD0D100CFD01F /* TokensRootNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensRootNode.swift; sourceTree = "<group>"; };
+		000112C7211DFFF700CFD01F /* AddTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenViewController.swift; sourceTree = "<group>"; };
+		000112CA211E09BF00CFD01F /* TokenCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCellNode.swift; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				0001126E211AD20700CFD01F /* Classes */,
-				00011260211AD17900CFD01F /* Main.storyboard */,
 				00011263211AD17B00CFD01F /* Assets.xcassets */,
 				00011265211AD17B00CFD01F /* LaunchScreen.storyboard */,
 				00011268211AD17B00CFD01F /* Info.plist */,
@@ -146,9 +157,9 @@
 		0001126E211AD20700CFD01F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				00011271211AD20700CFD01F /* AppDelegate.swift */,
 				0001126F211AD20700CFD01F /* Strings.swift */,
 				00011270211AD20700CFD01F /* Models */,
-				00011271211AD20700CFD01F /* AppDelegate.swift */,
 				00011272211AD20700CFD01F /* Controllers */,
 				00011273211AD20700CFD01F /* Views */,
 				00011274211AD20700CFD01F /* Services */,
@@ -172,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				00011299211B439700CFD01F /* TokenListViewController.swift */,
+				000112BF211DBC2E00CFD01F /* HomeViewController.swift */,
+				000112C1211DD01E00CFD01F /* TokensViewController.swift */,
+				000112C7211DFFF700CFD01F /* AddTokenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				0001129C211B439E00CFD01F /* TokenListRootNode.swift */,
+				000112C4211DD0D100CFD01F /* TokensRootNode.swift */,
+				000112CA211E09BF00CFD01F /* TokenCellNode.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +279,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0001126B211AD17B00CFD01F /* Build configuration list for PBXNativeTarget "Two Step Authenticator" */;
 			buildPhases = (
+				000112BD211DB81700CFD01F /* Run SwiftLint */,
 				61A05DA64E5E1F50CF27F5B5 /* [CP] Check Pods Manifest.lock */,
 				00011255211AD17900CFD01F /* Sources */,
 				00011256211AD17900CFD01F /* Frameworks */,
@@ -284,6 +301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00011285211AD25F00CFD01F /* Build configuration list for PBXNativeTarget "TSAKeyboard" */;
 			buildPhases = (
+				000112BE211DB82E00CFD01F /* Run SwiftLint */,
 				AEE521A8BD21E96AC6C6073F /* [CP] Check Pods Manifest.lock */,
 				00011279211AD25F00CFD01F /* Sources */,
 				0001127A211AD25F00CFD01F /* Frameworks */,
@@ -342,7 +360,6 @@
 			files = (
 				00011267211AD17B00CFD01F /* LaunchScreen.storyboard in Resources */,
 				00011264211AD17B00CFD01F /* Assets.xcassets in Resources */,
-				00011262211AD17900CFD01F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +374,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		000112BD211DB81700CFD01F /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		000112BE211DB82E00CFD01F /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		61A05DA64E5E1F50CF27F5B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,12 +471,17 @@
 			files = (
 				000112AC211C2DE900CFD01F /* Key.swift in Sources */,
 				0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */,
+				000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */,
+				000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
 				000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				00011277211AD20700CFD01F /* AppDelegate.swift in Sources */,
 				0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
+				000112C5211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
+				000112C0211DBC2E00CFD01F /* HomeViewController.swift in Sources */,
 				000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */,
 				00011276211AD20700CFD01F /* Strings.swift in Sources */,
 				000112B8211D721400CFD01F /* Colours.swift in Sources */,
+				000112C2211DD01E00CFD01F /* TokensViewController.swift in Sources */,
 				00011278211AD20700CFD01F /* Urls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,11 +492,15 @@
 			files = (
 				000112AA211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				000112BA211D79EC00CFD01F /* Strings.swift in Sources */,
+				000112C3211DD01E00CFD01F /* TokensViewController.swift in Sources */,
 				000112B9211D721400CFD01F /* Colours.swift in Sources */,
 				000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */,
+				000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
+				000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
 				0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */,
 				000112BC211D7A8900CFD01F /* Settings.swift in Sources */,
+				000112C9211E017200CFD01F /* AddTokenViewController.swift in Sources */,
 				0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
 				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
 				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
@@ -466,14 +520,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00011260211AD17900CFD01F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00011261211AD17900CFD01F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		00011265211AD17B00CFD01F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

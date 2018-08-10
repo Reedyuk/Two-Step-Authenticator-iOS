@@ -57,7 +57,7 @@ class KeyboardNodeRowCell: ASCellNode {
         collectionView.layoutIfNeeded()
         layoutIfNeeded()
     }
-    
+
     override func layout() {
         if contentSize != flowLayout.collectionViewContentSize {
             contentSize = flowLayout.collectionViewContentSize
@@ -80,7 +80,8 @@ extension KeyboardNodeRowCell: ASCollectionDelegate, ASCollectionDataSource {
         return KeyboardKeyView(key: keys[indexPath.row])
     }
 
-    func collectionNode(_ collectionNode: ASCollectionNode, constrainedSizeForItemAt indexPath: IndexPath) -> ASSizeRange {
+    func collectionNode(_ collectionNode: ASCollectionNode,
+                        constrainedSizeForItemAt indexPath: IndexPath) -> ASSizeRange {
         return ASSizeRangeMake(CGSize(width: buttonMinWidth,
                                       height: collectionNode.frame.height),
                                CGSize(width: CGFloat.greatestFiniteMagnitude,
@@ -93,21 +94,16 @@ extension KeyboardNodeRowCell: ASCollectionDelegate, ASCollectionDataSource {
             switch specialKey.type {
             case .switchKeyboard:
                 inputViewController?.advanceToNextInputMode()
-                break
             case .token:
                 let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy)
                 parentViewController.present(tokenListViewController, animated: true, completion: nil)
-                break
             case .spacebar:
                 (textDocumentProxy as UIKeyInput).insertText(" ")
-                break
             case .shift:
                 Settings.sharedInstance.shiftEnabled = !Settings.sharedInstance.shiftEnabled
-                parentViewController.node.reloadData()
-                break
+                parentViewController.node.reloadSections(IndexSet(integer: 0), with: .automatic)
             case .backspace:
                 (textDocumentProxy as UIKeyInput).deleteBackward()
-                break
             case .returnKey:
                 (textDocumentProxy as UIKeyInput).insertText("\n")
             }

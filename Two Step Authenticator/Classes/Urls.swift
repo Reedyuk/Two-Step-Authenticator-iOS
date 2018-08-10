@@ -8,7 +8,5 @@
 
 import Foundation
 
-// swiftlint:disable line_length
 public struct Urls {
 }
-// swiftlint:enable line_length
