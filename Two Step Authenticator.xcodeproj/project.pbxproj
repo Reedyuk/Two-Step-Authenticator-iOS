@@ -14,12 +14,25 @@
 		00011277211AD20700CFD01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011271211AD20700CFD01F /* AppDelegate.swift */; };
 		00011278211AD20700CFD01F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011275211AD20700CFD01F /* Urls.swift */; };
 		00011284211AD25F00CFD01F /* TSAKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0001127D211AD25F00CFD01F /* TSAKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0001128A211ADA1300CFD01F /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00011289211ADA1300CFD01F /* Keyboard.xib */; };
 		00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011293211B09C400CFD01F /* KeyboardViewController.swift */; };
 		0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011299211B439700CFD01F /* TokenListViewController.swift */; };
 		0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011299211B439700CFD01F /* TokenListViewController.swift */; };
 		0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001129C211B439E00CFD01F /* TokenListRootNode.swift */; };
 		0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001129C211B439E00CFD01F /* TokenListRootNode.swift */; };
+		0001129F211B460000CFD01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00011263211AD17B00CFD01F /* Assets.xcassets */; };
+		000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */; };
+		000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A4211C24D500CFD01F /* KeyboardKeyView.swift */; };
+		000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */; };
+		000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A8211C272A00CFD01F /* String+Formatting.swift */; };
+		000112AA211C272A00CFD01F /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A8211C272A00CFD01F /* String+Formatting.swift */; };
+		000112AC211C2DE900CFD01F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AB211C2DE900CFD01F /* Key.swift */; };
+		000112AD211C2DE900CFD01F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AB211C2DE900CFD01F /* Key.swift */; };
+		000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AE211CB81500CFD01F /* SpecialKey.swift */; };
+		000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AE211CB81500CFD01F /* SpecialKey.swift */; };
+		000112B8211D721400CFD01F /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B7211D721400CFD01F /* Colours.swift */; };
+		000112B9211D721400CFD01F /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B7211D721400CFD01F /* Colours.swift */; };
+		000112BA211D79EC00CFD01F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001126F211AD20700CFD01F /* Strings.swift */; };
+		000112BC211D7A8900CFD01F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112BB211D7A8900CFD01F /* Settings.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -59,10 +72,17 @@
 		00011275211AD20700CFD01F /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		0001127D211AD25F00CFD01F /* TSAKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TSAKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		00011281211AD25F00CFD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00011289211ADA1300CFD01F /* Keyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		00011293211B09C400CFD01F /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		00011299211B439700CFD01F /* TokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListViewController.swift; sourceTree = "<group>"; };
 		0001129C211B439E00CFD01F /* TokenListRootNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListRootNode.swift; sourceTree = "<group>"; };
+		000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNodeViewController.swift; sourceTree = "<group>"; };
+		000112A4211C24D500CFD01F /* KeyboardKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyView.swift; sourceTree = "<group>"; };
+		000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNodeRowCell.swift; sourceTree = "<group>"; };
+		000112A8211C272A00CFD01F /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
+		000112AB211C2DE900CFD01F /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		000112AE211CB81500CFD01F /* SpecialKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
+		000112B7211D721400CFD01F /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		000112BB211D7A8900CFD01F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +153,7 @@
 				00011273211AD20700CFD01F /* Views */,
 				00011274211AD20700CFD01F /* Services */,
 				00011275211AD20700CFD01F /* Urls.swift */,
+				000112B7211D721400CFD01F /* Colours.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -140,6 +161,9 @@
 		00011270211AD20700CFD01F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				000112A8211C272A00CFD01F /* String+Formatting.swift */,
+				000112AB211C2DE900CFD01F /* Key.swift */,
+				000112AE211CB81500CFD01F /* SpecialKey.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,7 +196,6 @@
 			children = (
 				0001128F211B09C400CFD01F /* Classes */,
 				00011281211AD25F00CFD01F /* Info.plist */,
-				00011289211ADA1300CFD01F /* Keyboard.xib */,
 			);
 			path = TSAKeyboard;
 			sourceTree = "<group>";
@@ -183,6 +206,7 @@
 				00011290211B09C400CFD01F /* Models */,
 				00011291211B09C400CFD01F /* Controllers */,
 				00011294211B09C400CFD01F /* Views */,
+				000112BB211D7A8900CFD01F /* Settings.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -198,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				00011293211B09C400CFD01F /* KeyboardViewController.swift */,
+				000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +230,8 @@
 		00011294211B09C400CFD01F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				000112A4211C24D500CFD01F /* KeyboardKeyView.swift */,
+				000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,7 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0001128A211ADA1300CFD01F /* Keyboard.xib in Resources */,
+				0001129F211B460000CFD01F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000112AC211C2DE900CFD01F /* Key.swift in Sources */,
 				0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */,
+				000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				00011277211AD20700CFD01F /* AppDelegate.swift in Sources */,
 				0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
+				000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */,
 				00011276211AD20700CFD01F /* Strings.swift in Sources */,
+				000112B8211D721400CFD01F /* Colours.swift in Sources */,
 				00011278211AD20700CFD01F /* Urls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,9 +440,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000112AA211C272A00CFD01F /* String+Formatting.swift in Sources */,
+				000112BA211D79EC00CFD01F /* Strings.swift in Sources */,
+				000112B9211D721400CFD01F /* Colours.swift in Sources */,
+				000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */,
 				0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */,
+				000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */,
+				000112BC211D7A8900CFD01F /* Settings.swift in Sources */,
 				0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
+				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
+				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
 				00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */,
+				000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

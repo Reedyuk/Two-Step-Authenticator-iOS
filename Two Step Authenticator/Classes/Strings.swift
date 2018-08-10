@@ -9,4 +9,8 @@
 import Foundation
 
 public struct Strings {
+    public static let shift = "Shift"
+    public static let space = "    Space    "
+    public static let auth = "Auth"
+    public static let returnKey = "Return"
 }
