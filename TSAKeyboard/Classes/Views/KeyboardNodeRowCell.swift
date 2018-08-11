@@ -95,6 +95,8 @@ extension KeyboardNodeRowCell: ASCollectionDelegate, ASCollectionDataSource {
             case .switchKeyboard:
                 inputViewController?.advanceToNextInputMode()
             case .token:
+                //let tokensViewController = TokensViewController()
+                //parentViewController.present(tokensViewController, animated: true, completion: nil)
                 let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy)
                 parentViewController.present(tokenListViewController, animated: true, completion: nil)
             case .spacebar:

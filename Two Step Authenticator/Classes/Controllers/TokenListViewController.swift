@@ -8,6 +8,7 @@
 
 import UIKit
 import AsyncDisplayKit
+import OneTimePassword
 
 class TokenListViewController: ASViewController<TokenListRootNode> {
 
@@ -21,5 +22,13 @@ class TokenListViewController: ASViewController<TokenListRootNode> {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("storyboards are incompatible with truth and beauty")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let defaults = UserDefaults(suiteName: "Two-Step-Authenticator")
+        if let tokens = defaults?.object(forKey: "tokenDetails") as? [Token] {
+            print(tokens)
+        }
     }
 }

@@ -13,10 +13,10 @@ import OneTimePassword
 class TokensRootNode: ASDisplayNode {
 
     let tableNode: ASTableNode
-
     var tokens: [Token] {
         return Settings.sharedInstance.tokens
     }
+    var timer: Timer?
 
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -31,9 +31,17 @@ class TokensRootNode: ASDisplayNode {
         tableNode = ASTableNode()
         super.init()
         addSubnode(tableNode)
+        tableNode.backgroundColor = UIColor.gray
+        tableNode.view.separatorStyle = .none
         tableNode.view.addSubview(refreshControl)
         tableNode.delegate = self
         tableNode.dataSource = self
+    }
+
+    override func didLoad() {
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+            self.refreshTokens()
+        })
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -42,16 +50,16 @@ class TokensRootNode: ASDisplayNode {
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         refreshTokens()
-        tableNode.reloadData()
-        refreshControl.endRefreshing()
     }
 
-    func refreshTokens() {
+    @objc func refreshTokens() {
         var updatedTokens = [Token]()
         for token in tokens {
             updatedTokens.append(token.updatedToken())
         }
         Settings.sharedInstance.tokens = updatedTokens
+        tableNode.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
@@ -63,10 +71,13 @@ extension TokensRootNode: ASTableDataSource, ASTableDelegate {
 
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         let cell = TokensCellNode(token: tokens[indexPath.row])
-        cell.style.preferredSize = CGSize(width: tableNode.frame.width, height: 44)
+        cell.style.preferredSize = CGSize(width: tableNode.frame.width, height: 64)
         return cell
     }
 
     func tableNode(_ tableNode: ASTableNode, didSelectRowAt indexPath: IndexPath) {
+        if let password = tokens[indexPath.row].currentPassword {
+            UIPasteboard.general.string = password
+        }
     }
 }

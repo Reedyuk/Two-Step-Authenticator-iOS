@@ -74,10 +74,10 @@ class TokenCellNode: ASCellNode {
                                             justifyContent: .center,
                                             alignItems: .center,
                                             children: [accountName, accountUserName, secretKey, addButton])
-        let insetStack = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 5,
-                                                                left: 5,
+        let insetStack = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 10,
+                                                                left: 10,
                                                                 bottom: 0,
-                                                                right: 5),
+                                                                right: 10),
                                            child: stackLayout)
         return insetStack
     }

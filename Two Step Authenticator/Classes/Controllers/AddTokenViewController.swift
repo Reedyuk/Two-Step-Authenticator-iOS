@@ -57,6 +57,10 @@ extension AddTokenViewController {
         //validate form.
         if let token = validate(tokenDetails: tokenDetails) {
             Settings.sharedInstance.tokens.append(token)
+            let defaults = UserDefaults(suiteName: "Two-Step-Authenticator")
+            //need to convert the tokens into a property list.
+            defaults?.set(Settings.sharedInstance.tokens, forKey: "tokenDetails")
+            defaults?.synchronize()
             navigationController?.popViewController(animated: true)
         } else {
             //invalid token.

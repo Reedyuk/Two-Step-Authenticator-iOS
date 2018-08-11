@@ -37,4 +37,5 @@ class TokensViewController: ASViewController<TokensRootNode> {
     @objc func addTokenButtonPressed() {
         navigationController?.pushViewController(AddTokenViewController(), animated: true)
     }
+
 }
