@@ -6,8 +6,11 @@
 //  Copyright © 2018 Andrew Reed. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import AsyncDisplayKit
+import OneTimePassword
+import Base32
 
 class TokenCellNode: ASCellNode {
 
@@ -15,8 +18,10 @@ class TokenCellNode: ASCellNode {
     let accountUserName = ASEditableTextNode()
     let secretKey = ASEditableTextNode()
     let addButton = ASButtonNode()
+    let addTokenViewController: AddTokenViewController
 
-    override init() {
+    init(addTokenViewController: AddTokenViewController) {
+        self.addTokenViewController = addTokenViewController
         super.init()
         addSubnode(accountName)
         addSubnode(accountUserName)
@@ -78,6 +83,10 @@ class TokenCellNode: ASCellNode {
     }
 
     @objc func addTokenButtonPressed() {
-        //validate form.
+        let tokenDetails = TokenDetails(issuer: accountName.textView.text,
+                                        name: accountUserName.textView.text,
+                                        secret: secretKey.textView.text)
+        addTokenViewController.submitToken(tokenDetails: tokenDetails)
     }
+
 }

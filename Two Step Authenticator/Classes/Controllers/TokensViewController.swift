@@ -25,6 +25,11 @@ class TokensViewController: ASViewController<TokensRootNode> {
         navigationItem.rightBarButtonItem = addTokenButton
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        node.tableNode.reloadData()
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("storyboards are incompatible with truth and beauty")
     }

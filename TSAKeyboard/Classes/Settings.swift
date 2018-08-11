@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import OneTimePassword
 
 class Settings {
     static let sharedInstance = Settings()
 
     var shiftEnabled = false
+    var tokens: [Token] = [Token]()
 }

@@ -7,6 +7,8 @@ inhibit_all_warnings!
 def required_pods
 
 pod 'Texture'
+pod 'OneTimePassword'
+pod 'Base32'
 
 end
 
