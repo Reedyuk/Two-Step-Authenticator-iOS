@@ -10,10 +10,11 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
     private weak var _heightConstraint: NSLayoutConstraint?
+    var keyboardNodeViewController: KeyboardNodeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInterface()
+        Settings.sharedInstance.initalise()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +33,7 @@ class KeyboardViewController: UIInputViewController {
         heightConstraint.priority = .required - 1
         view.addConstraint(heightConstraint)
         _heightConstraint = heightConstraint
+        loadInterface()
     }
 
     override func textWillChange(_ textInput: UITextInput?) {
@@ -43,8 +45,11 @@ class KeyboardViewController: UIInputViewController {
     }
 
     func loadInterface() {
-        let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
-                                                                    parentInputViewController: self)
-        present(keyboardNodeViewController, animated: true, completion: nil)
+        if keyboardNodeViewController == nil {
+            let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
+                                                                        parentInputViewController: self)
+            present(keyboardNodeViewController, animated: true, completion: nil)
+            self.keyboardNodeViewController = keyboardNodeViewController
+        }
     }
 }

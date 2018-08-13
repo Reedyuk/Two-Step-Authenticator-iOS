@@ -46,6 +46,8 @@
 		000112D8211EC25200CFD01F /* TokenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D6211EC25200CFD01F /* TokenDetails.swift */; };
 		000112DA211ECAD200CFD01F /* TokensCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D9211ECAD200CFD01F /* TokensCellNode.swift */; };
 		000112DB211ECAD200CFD01F /* TokensCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D9211ECAD200CFD01F /* TokensCellNode.swift */; };
+		000112DD2120200000CFD01F /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112DC2120200000CFD01F /* TokenStore.swift */; };
+		000112DE2120200000CFD01F /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112DC2120200000CFD01F /* TokenStore.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,9 @@
 		000112CA211E09BF00CFD01F /* TokenCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCellNode.swift; sourceTree = "<group>"; };
 		000112D6211EC25200CFD01F /* TokenDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDetails.swift; sourceTree = "<group>"; };
 		000112D9211ECAD200CFD01F /* TokensCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensCellNode.swift; sourceTree = "<group>"; };
+		000112DC2120200000CFD01F /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		000112DF2120273E00CFD01F /* Two Step Authenticator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Two Step Authenticator.entitlements"; sourceTree = "<group>"; };
+		000112E02120276600CFD01F /* TSAKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TSAKeyboard.entitlements; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 		0001125B211AD17900CFD01F /* Two Step Authenticator */ = {
 			isa = PBXGroup;
 			children = (
+				000112DF2120273E00CFD01F /* Two Step Authenticator.entitlements */,
 				0001126E211AD20700CFD01F /* Classes */,
 				00011263211AD17B00CFD01F /* Assets.xcassets */,
 				00011265211AD17B00CFD01F /* LaunchScreen.storyboard */,
@@ -183,6 +189,7 @@
 				000112AB211C2DE900CFD01F /* Key.swift */,
 				000112AE211CB81500CFD01F /* SpecialKey.swift */,
 				000112D6211EC25200CFD01F /* TokenDetails.swift */,
+				000112DC2120200000CFD01F /* TokenStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 		0001127E211AD25F00CFD01F /* TSAKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				000112E02120276600CFD01F /* TSAKeyboard.entitlements */,
 				0001128F211B09C400CFD01F /* Classes */,
 				00011281211AD25F00CFD01F /* Info.plist */,
 			);
@@ -337,9 +345,25 @@
 				TargetAttributes = {
 					00011258211AD17900CFD01F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					0001127C211AD25F00CFD01F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -493,6 +517,7 @@
 				0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
 				000112C5211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
 				000112C0211DBC2E00CFD01F /* HomeViewController.swift in Sources */,
+				000112DD2120200000CFD01F /* TokenStore.swift in Sources */,
 				000112D5211EC14B00CFD01F /* Settings.swift in Sources */,
 				000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */,
 				00011276211AD20700CFD01F /* Strings.swift in Sources */,
@@ -523,6 +548,7 @@
 				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
 				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
 				00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */,
+				000112DE2120200000CFD01F /* TokenStore.swift in Sources */,
 				000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +695,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Two Step Authenticator/Two Step Authenticator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269C5Q4423;
 				INFOPLIST_FILE = "Two Step Authenticator/Info.plist";
@@ -689,6 +716,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Two Step Authenticator/Two Step Authenticator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269C5Q4423;
 				INFOPLIST_FILE = "Two Step Authenticator/Info.plist";
@@ -707,6 +735,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSAKeyboard/TSAKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269C5Q4423;
 				INFOPLIST_FILE = TSAKeyboard/Info.plist;
@@ -727,6 +756,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8562F13B06AB51B33A23295 /* Pods-TSAKeyboard.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TSAKeyboard/TSAKeyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269C5Q4423;
 				INFOPLIST_FILE = TSAKeyboard/Info.plist;

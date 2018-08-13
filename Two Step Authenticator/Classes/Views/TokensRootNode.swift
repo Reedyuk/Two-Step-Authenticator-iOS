@@ -13,8 +13,11 @@ import OneTimePassword
 class TokensRootNode: ASDisplayNode {
 
     let tableNode: ASTableNode
-    var tokens: [Token] {
-        return Settings.sharedInstance.tokens
+    var tokens: [PersistentToken] {
+        if let store = Settings.sharedInstance.store {
+            return store.persistentTokens
+        }
+        return [PersistentToken]()
     }
     var timer: Timer?
 
@@ -53,11 +56,15 @@ class TokensRootNode: ASDisplayNode {
     }
 
     @objc func refreshTokens() {
-        var updatedTokens = [Token]()
         for token in tokens {
-            updatedTokens.append(token.updatedToken())
+            do {
+                try Settings.sharedInstance.store?.deletePersistentToken(token)
+                let updatedToken = token.token.updatedToken()
+                try Settings.sharedInstance.store?.addToken(updatedToken)
+            } catch {
+                print("failed to error")
+            }
         }
-        Settings.sharedInstance.tokens = updatedTokens
         tableNode.reloadData()
         refreshControl.endRefreshing()
     }
@@ -70,13 +77,13 @@ extension TokensRootNode: ASTableDataSource, ASTableDelegate {
     }
 
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-        let cell = TokensCellNode(token: tokens[indexPath.row])
+        let cell = TokensCellNode(token: tokens[indexPath.row].token)
         cell.style.preferredSize = CGSize(width: tableNode.frame.width, height: 64)
         return cell
     }
 
     func tableNode(_ tableNode: ASTableNode, didSelectRowAt indexPath: IndexPath) {
-        if let password = tokens[indexPath.row].currentPassword {
+        if let password = tokens[indexPath.row].token.currentPassword {
             UIPasteboard.general.string = password
         }
     }

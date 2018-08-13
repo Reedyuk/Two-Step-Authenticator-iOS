@@ -41,6 +41,7 @@ class KeyboardNodeRowCell: ASCellNode {
         addSubnode(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.view.delaysContentTouches = false
         collectionView.view.isScrollEnabled = false
         backgroundColor = Colours.defaultBackground
         collectionView.backgroundColor = Colours.defaultBackground

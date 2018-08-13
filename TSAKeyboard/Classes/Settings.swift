@@ -11,7 +11,20 @@ import OneTimePassword
 
 class Settings {
     static let sharedInstance = Settings()
-
+    var store: TokenStore?
     var shiftEnabled = false
-    var tokens: [Token] = [Token]()
+
+    init() {
+    }
+
+    func initalise() {
+        if let userDefaults = UserDefaults(suiteName: "group.two.step.authenticator") {
+            do {
+                store = try KeychainTokenStore(keychain: Keychain.sharedInstance,
+                                               userDefaults: userDefaults)
+            } catch {
+                fatalError("Failed to load token store: \(error)")
+            }
+        }
+    }
 }

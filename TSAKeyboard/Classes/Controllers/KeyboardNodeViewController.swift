@@ -72,6 +72,7 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
         node.allowsSelection = false
         node.view.separatorStyle = .none
         node.view.isScrollEnabled = false
+        node.view.delaysContentTouches = false
         node.backgroundColor = Colours.defaultBackground
     }
 

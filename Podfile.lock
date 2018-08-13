@@ -27,17 +27,25 @@ PODS:
 
 DEPENDENCIES:
   - Base32
-  - OneTimePassword
+  - "OneTimePassword (from `git@github.com:Reedyuk/OneTimePassword.git`)"
   - Texture
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Base32
-    - OneTimePassword
     - PINCache
     - PINOperation
     - PINRemoteImage
     - Texture
+
+EXTERNAL SOURCES:
+  OneTimePassword:
+    :git: "git@github.com:Reedyuk/OneTimePassword.git"
+
+CHECKOUT OPTIONS:
+  OneTimePassword:
+    :commit: a326c3cb7ea4007834f564d33a15b781293afb15
+    :git: "git@github.com:Reedyuk/OneTimePassword.git"
 
 SPEC CHECKSUMS:
   Base32: 163c298644d184e89ca4e00a996bad6bf5166390
@@ -47,6 +55,6 @@ SPEC CHECKSUMS:
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 5e78987d57a222598f5e768c33cde159e62e7c3c
+PODFILE CHECKSUM: 50484fa0ac9d7058d67f99cf3e12c1142f805128
 
 COCOAPODS: 1.5.2

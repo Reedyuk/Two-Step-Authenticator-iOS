@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import AsyncDisplayKit
-import OneTimePassword
 import Base32
 
 class TokenCellNode: ASCellNode {

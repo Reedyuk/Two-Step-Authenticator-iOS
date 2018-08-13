@@ -7,7 +7,8 @@ inhibit_all_warnings!
 def required_pods
 
 pod 'Texture'
-pod 'OneTimePassword'
+pod 'OneTimePassword', git: 'git@github.com:Reedyuk/OneTimePassword.git'
+#pod 'OneTimePassword', path: '../OneTimePassword'
 pod 'Base32'
 
 end

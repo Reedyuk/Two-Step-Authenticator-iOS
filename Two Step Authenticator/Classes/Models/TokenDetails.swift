@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import OneTimePassword
 import Base32
+import OneTimePassword
 
 class TokenDetails {
     let issuer: String
