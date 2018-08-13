@@ -48,8 +48,15 @@ class KeyboardViewController: UIInputViewController {
         if keyboardNodeViewController == nil {
             let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
                                                                         parentInputViewController: self)
-            present(keyboardNodeViewController, animated: true, completion: nil)
+            //present(keyboardNodeViewController, animated: true, completion: nil)
+            view.addSubview(keyboardNodeViewController.view)
             self.keyboardNodeViewController = keyboardNodeViewController
+            let seperator = UIView(frame: CGRect(x: 0,
+                                                 y: 0,
+                                                 width: view.frame.width,
+                                                 height: 1))
+            seperator.backgroundColor = UIColor.lightGray
+            self.keyboardNodeViewController?.view.addSubview(seperator)
         }
     }
 }
