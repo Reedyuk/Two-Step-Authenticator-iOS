@@ -30,8 +30,8 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
                                  Key(title: "J"),
                                  Key(title: "K"),
                                  Key(title: "L")]
-    static let thirdRowOfKeys = [SpecialKey(title: Strings.KeyboardButtons.shift,
-                                            image: nil,
+    static let thirdRowOfKeys = [SpecialKey(title: "",
+                                            image: UIImage(named: "android-up-grey"),
                                             type: .shift),
                                  Key(title: "Z"),
                                   Key(title: "X"),
@@ -41,7 +41,7 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
                                   Key(title: "N"),
                                   Key(title: "M"),
                                   SpecialKey(title: "",
-                                             image: UIImage(named: "Backspace"),
+                                             image: UIImage(named: "android-back-grey"),
                                              type: .backspace)]
     static let fourthRowOfKeys = [SpecialKey(title: Strings.KeyboardButtons.auth,
                                              image: nil,
@@ -70,7 +70,8 @@ class KeyboardNodeViewController: ASViewController<ASTableNode> {
         node.delegate = self
         node.dataSource = self
         node.allowsSelection = false
-        node.view.separatorStyle = .none
+        node.view.separatorStyle = .singleLine
+        node.view.separatorColor = UIColor.gray
         node.view.isScrollEnabled = false
         node.view.delaysContentTouches = false
         node.backgroundColor = Colours.defaultBackground
@@ -108,7 +109,7 @@ extension KeyboardNodeViewController: ASTableDataSource, ASTableDelegate {
                                        inputViewController: parentInputViewController,
                                        parentViewController: self,
                                        buttonMinWidth: calculateButtonMinWidth())
-        cell.style.preferredSize = CGSize(width: tableNode.frame.width - 10, height: 49)
+        cell.style.preferredSize = CGSize(width: tableNode.frame.width - 10, height: 55)
         return cell
     }
 

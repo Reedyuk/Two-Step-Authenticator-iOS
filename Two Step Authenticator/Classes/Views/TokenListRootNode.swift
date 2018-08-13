@@ -12,7 +12,8 @@ import OneTimePassword
 
 class TokenListRootNode: ASDisplayNode {
 
-    let backButton = ASButtonNode()
+    var backButton: ASButtonNode?
+    var switchButton: ASButtonNode?
     let tableNode: ASTableNode
     let divider = ASDisplayNode()
     var tokens: [PersistentToken] {
@@ -32,6 +33,8 @@ class TokenListRootNode: ASDisplayNode {
         return refreshControl
     }()
 
+    private let showSwitch = true
+
     override init() {
         tableNode = ASTableNode()
         super.init()
@@ -43,11 +46,25 @@ class TokenListRootNode: ASDisplayNode {
         tableNode.view.separatorStyle = .none
         tableNode.backgroundColor = Colours.defaultBackground
         tableNode.view.addSubview(refreshControl)
-        styleButton()
-        addSubnode(backButton)
-        backButton.addTarget(self,
-                             action: #selector(backButtonPressed),
-                             forControlEvents: .touchUpInside)
+        if showSwitch {
+            let switchButton = ASButtonNode()
+            addSubnode(switchButton)
+            switchButton.addTarget(self,
+                                 action: #selector(switchButtonPressed),
+                                 forControlEvents: .touchUpInside)
+            styleButton(button: switchButton)
+            switchButton.setImage(UIImage(named: "NextKeyboard"), for: .normal)
+            self.switchButton = switchButton
+        } else {
+            let backButton = ASButtonNode()
+            addSubnode(backButton)
+            backButton.addTarget(self,
+                                 action: #selector(backButtonPressed),
+                                 forControlEvents: .touchUpInside)
+            styleButton(button: backButton)
+            backButton.setImage(UIImage(named: "android-back"), for: .normal)
+            self.backButton = backButton
+        }
     }
 
     override func didLoad() {
@@ -56,26 +73,31 @@ class TokenListRootNode: ASDisplayNode {
         })
     }
 
-    func styleButton() {
-        backButton.cornerRadius = 5.0
-        backButton.clipsToBounds = true
-        backButton.layer.masksToBounds = false
-        backButton.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        backButton.layer.shadowRadius = 0.0
-        backButton.layer.shadowOpacity = 0.35
-        backButton.backgroundColor = .lightGray
-        backButton.setImage(UIImage(named: "android-back"), for: .normal)
-        backButton.style.preferredSize = CGSize(width: 44, height: 44)
+    func styleButton(button: ASButtonNode) {
+        button.cornerRadius = 5.0
+        button.clipsToBounds = true
+        button.layer.masksToBounds = false
+        button.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        button.layer.shadowRadius = 0.0
+        button.layer.shadowOpacity = 0.35
+        button.backgroundColor = .lightGray
+        button.style.preferredSize = CGSize(width: 44, height: 44)
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         divider.style.preferredSize = CGSize(width: constrainedSize.max.width, height: 1)
         tableNode.style.preferredSize = CGSize(width: constrainedSize.max.width, height: constrainedSize.max.height)
+        let button: ASButtonNode
+        if let switchButton = self.switchButton {
+            button = switchButton
+        } else {
+            button = self.backButton!
+        }
         let backInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: CGFloat.infinity,
                                                                left: 10,
                                                                bottom: 10,
                                                                right: CGFloat.infinity),
-                                          child: backButton)
+                                          child: button)
         let stackVertical = ASStackLayoutSpec.vertical()
         stackVertical.children = [divider, tableNode]
         return ASOverlayLayoutSpec(child: stackVertical, overlay: backInset)
@@ -83,6 +105,10 @@ class TokenListRootNode: ASDisplayNode {
 
     @objc func backButtonPressed() {
         tokenListViewController?.dismiss(animated: true)
+    }
+
+    @objc func switchButtonPressed() {
+        tokenListViewController?.keyboardViewController.advanceToNextInputMode()
     }
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {

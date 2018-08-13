@@ -48,6 +48,14 @@
 		000112DB211ECAD200CFD01F /* TokensCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D9211ECAD200CFD01F /* TokensCellNode.swift */; };
 		000112DD2120200000CFD01F /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112DC2120200000CFD01F /* TokenStore.swift */; };
 		000112DE2120200000CFD01F /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112DC2120200000CFD01F /* TokenStore.swift */; };
+		00E26CE62121BBBE007A2519 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE52121BBBE007A2519 /* Fonts.swift */; };
+		00E26CE72121BBBF007A2519 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE52121BBBE007A2519 /* Fonts.swift */; };
+		00E26CE92121BE19007A2519 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE82121BE19007A2519 /* UIImage.swift */; };
+		00E26CEA2121BE19007A2519 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE82121BE19007A2519 /* UIImage.swift */; };
+		00E26CEB2121CF6A007A2519 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011293211B09C400CFD01F /* KeyboardViewController.swift */; };
+		00E26CEC2121D01E007A2519 /* KeyboardNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */; };
+		00E26CED2121D03A007A2519 /* KeyboardNodeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */; };
+		00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A4211C24D500CFD01F /* KeyboardKeyView.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +115,8 @@
 		000112DC2120200000CFD01F /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		000112DF2120273E00CFD01F /* Two Step Authenticator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Two Step Authenticator.entitlements"; sourceTree = "<group>"; };
 		000112E02120276600CFD01F /* TSAKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TSAKeyboard.entitlements; sourceTree = "<group>"; };
+		00E26CE52121BBBE007A2519 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		00E26CE82121BE19007A2519 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +188,7 @@
 				00011274211AD20700CFD01F /* Services */,
 				00011275211AD20700CFD01F /* Urls.swift */,
 				000112B7211D721400CFD01F /* Colours.swift */,
+				00E26CE52121BBBE007A2519 /* Fonts.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 				000112AE211CB81500CFD01F /* SpecialKey.swift */,
 				000112D6211EC25200CFD01F /* TokenDetails.swift */,
 				000112DC2120200000CFD01F /* TokenStore.swift */,
+				00E26CE82121BE19007A2519 /* UIImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,8 +519,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				000112AC211C2DE900CFD01F /* Key.swift in Sources */,
+				00E26CE92121BE19007A2519 /* UIImage.swift in Sources */,
 				0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */,
+				00E26CEB2121CF6A007A2519 /* KeyboardViewController.swift in Sources */,
+				00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */,
 				000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
 				000112D7211EC25200CFD01F /* TokenDetails.swift in Sources */,
 				000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */,
@@ -523,7 +538,10 @@
 				00011276211AD20700CFD01F /* Strings.swift in Sources */,
 				000112B8211D721400CFD01F /* Colours.swift in Sources */,
 				000112C2211DD01E00CFD01F /* TokensViewController.swift in Sources */,
+				00E26CE62121BBBE007A2519 /* Fonts.swift in Sources */,
+				00E26CEC2121D01E007A2519 /* KeyboardNodeViewController.swift in Sources */,
 				00011278211AD20700CFD01F /* Urls.swift in Sources */,
+				00E26CED2121D03A007A2519 /* KeyboardNodeRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +555,7 @@
 				000112C3211DD01E00CFD01F /* TokensViewController.swift in Sources */,
 				000112B9211D721400CFD01F /* Colours.swift in Sources */,
 				000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */,
+				00E26CEA2121BE19007A2519 /* UIImage.swift in Sources */,
 				000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
 				000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
 				0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */,
@@ -547,6 +566,7 @@
 				0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
 				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
 				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
+				00E26CE72121BBBF007A2519 /* Fonts.swift in Sources */,
 				00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */,
 				000112DE2120200000CFD01F /* TokenStore.swift in Sources */,
 				000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */,

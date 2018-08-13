@@ -9,5 +9,7 @@
 import UIKit
 
 public struct Colours {
-    static let defaultBackground = UIColor(red: 210/255.0, green: 213/255.0, blue: 219.0/255.0, alpha: 1.0)
+    static let defaultBackground = UIColor(red: 246/255.0, green: 247/255.0, blue: 248/255.0, alpha: 1.0)
+    static let defaultText = UIColor(red: 77/255.0, green: 80/255.0, blue: 86/255.0, alpha: 1.0)
+    static let highlightBackgroundColor = UIColor.lightGray
 }

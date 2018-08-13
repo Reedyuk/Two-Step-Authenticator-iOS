@@ -17,7 +17,7 @@ class KeyboardNodeRowCell: ASCellNode {
     private var collectionView: ASCollectionNode
     private let flowLayout = UICollectionViewFlowLayout()
     let textDocumentProxy: UITextDocumentProxy
-    let inputViewController: KeyboardViewController?
+    let inputViewController: KeyboardViewController
     let parentViewController: KeyboardNodeViewController
     var contentSize: CGSize = CGSize.zero
     static let cellSpacing = CGFloat(5)
@@ -25,7 +25,7 @@ class KeyboardNodeRowCell: ASCellNode {
 
     init(keys: [Key],
          textDocumentProxy: UITextDocumentProxy,
-         inputViewController: KeyboardViewController?,
+         inputViewController: KeyboardViewController,
          parentViewController: KeyboardNodeViewController,
          buttonMinWidth: CGFloat = CGFloat(30)) {
         self.parentViewController = parentViewController
@@ -94,11 +94,12 @@ extension KeyboardNodeRowCell: ASCollectionDelegate, ASCollectionDataSource {
         if let specialKey = key as? SpecialKey {
             switch specialKey.type {
             case .switchKeyboard:
-                inputViewController?.advanceToNextInputMode()
+                inputViewController.advanceToNextInputMode()
             case .token:
                 //let tokensViewController = TokensViewController()
                 //parentViewController.present(tokensViewController, animated: true, completion: nil)
-                let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy)
+                let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy,
+                                                                      keyboardViewController: inputViewController)
                 parentViewController.present(tokenListViewController, animated: true, completion: nil)
             case .spacebar:
                 (textDocumentProxy as UIKeyInput).insertText(" ")

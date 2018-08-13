@@ -12,9 +12,12 @@ import AsyncDisplayKit
 class TokenListViewController: ASViewController<TokenListRootNode> {
 
     let textDocumentProxy: UITextDocumentProxy
+    let keyboardViewController: KeyboardViewController
 
-    init(textDocumentProxy: UITextDocumentProxy) {
+    init(textDocumentProxy: UITextDocumentProxy,
+         keyboardViewController: KeyboardViewController) {
         self.textDocumentProxy = textDocumentProxy
+        self.keyboardViewController = keyboardViewController
         super.init(node: TokenListRootNode())
         node.tokenListViewController = self
     }

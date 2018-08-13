@@ -11,8 +11,6 @@ import AsyncDisplayKit
 
 class KeyboardKeyView: ASCellNode {
 
-    var defaultBackgroundColor: UIColor = .white
-    var highlightBackgroundColor: UIColor = .lightGray
     let defaultMargin: CGFloat
 
     let title = ASTextNode()
@@ -34,32 +32,26 @@ class KeyboardKeyView: ASCellNode {
             keyTitle = Settings.sharedInstance.shiftEnabled ? keyTitle.uppercased() : keyTitle.lowercased()
         }
         title.attributedText = String.formatLabel(text: keyTitle,
-                                                  font: UIFont.boldSystemFont(ofSize: 18),
-                                                  textColour: UIColor.black)
+                                                  font: Fonts.standardTextFontUltraLight,
+                                                  textColour: Colours.defaultText)
         addSubnode(title)
         if let image = key.image,
             let imageView = self.imageView {
             imageView.image = image
+            imageView.tintColor = Colours.defaultText
             addSubnode(imageView)
         }
     }
 
     func styleNode() {
-        keyBackground.backgroundColor = defaultBackgroundColor
-        keyBackground.cornerRadius = 5.0
-        keyBackground.clipsToBounds = true
-        keyBackground.layer.masksToBounds = false
-        keyBackground.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        keyBackground.layer.shadowRadius = 0.0
-        keyBackground.layer.shadowOpacity = 0.35
         backgroundColor = UIColor.clear
     }
 
     func animateKeyPress() {
         UIView.animate(withDuration: 0.05, animations: {
-            self.keyBackground.backgroundColor = self.highlightBackgroundColor
+            self.keyBackground.backgroundColor = Colours.highlightBackgroundColor
         }, completion: { _ in
-            self.keyBackground.backgroundColor = self.defaultBackgroundColor
+            self.keyBackground.backgroundColor = Colours.defaultBackground
         })
     }
 

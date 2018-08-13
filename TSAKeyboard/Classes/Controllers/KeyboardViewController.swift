@@ -29,7 +29,7 @@ class KeyboardViewController: UIInputViewController {
                                                   toItem: nil,
                                                   attribute: .notAnAttribute,
                                                   multiplier: 0.0,
-                                                  constant: 200)
+                                                  constant: 220)
         heightConstraint.priority = .required - 1
         view.addConstraint(heightConstraint)
         _heightConstraint = heightConstraint
@@ -46,17 +46,19 @@ class KeyboardViewController: UIInputViewController {
 
     func loadInterface() {
         if keyboardNodeViewController == nil {
-            let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
-                                                                        parentInputViewController: self)
-            //present(keyboardNodeViewController, animated: true, completion: nil)
-            view.addSubview(keyboardNodeViewController.view)
-            self.keyboardNodeViewController = keyboardNodeViewController
-            let seperator = UIView(frame: CGRect(x: 0,
-                                                 y: 0,
-                                                 width: view.frame.width,
-                                                 height: 1))
-            seperator.backgroundColor = UIColor.lightGray
-            self.keyboardNodeViewController?.view.addSubview(seperator)
+//            let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
+//                                                                        parentInputViewController: self)
+//            view.addSubview(keyboardNodeViewController.view)
+//            self.keyboardNodeViewController = keyboardNodeViewController
+//            let seperator = UIView(frame: CGRect(x: 0,
+//                                                 y: 0,
+//                                                 width: view.frame.width,
+//                                                 height: 1))
+//            seperator.backgroundColor = UIColor.lightGray
+//            self.keyboardNodeViewController?.view.addSubview(seperator)
+            let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy,
+                                                                  keyboardViewController: self)
+            view.addSubview(tokenListViewController.view)
         }
     }
 }
