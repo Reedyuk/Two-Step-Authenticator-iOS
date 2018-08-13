@@ -15,6 +15,7 @@ class TokensViewController: ASViewController<TokensRootNode> {
         super.init(node: TokensRootNode())
         node.backgroundColor = UIColor.gray
         title = Strings.TokensViewController.title
+        node.tableNode.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 
     override func viewDidLoad() {

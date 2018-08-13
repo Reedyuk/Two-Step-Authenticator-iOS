@@ -111,3 +111,25 @@ private extension UserDefaults {
         synchronize()
     }
 }
+
+extension PersistentToken {
+    func lastRefreshTime(before displayTime: DisplayTime) -> Date {
+        switch token.generator.factor {
+        case .counter:
+            return .distantPast
+        case .timer(let period):
+            let epoch = displayTime.timeIntervalSince1970
+            return Date(timeIntervalSince1970: epoch - epoch.truncatingRemainder(dividingBy: period))
+        }
+    }
+
+    func nextRefreshTime(after displayTime: DisplayTime) -> Date {
+        switch token.generator.factor {
+        case .counter:
+            return .distantFuture
+        case .timer(let period):
+            let epoch = displayTime.timeIntervalSince1970
+            return Date(timeIntervalSince1970: epoch + (period - epoch.truncatingRemainder(dividingBy: period)))
+        }
+    }
+}

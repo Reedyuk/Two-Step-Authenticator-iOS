@@ -14,6 +14,7 @@ class TokenListRootNode: ASDisplayNode {
 
     var backButton: ASButtonNode?
     var switchButton: ASButtonNode?
+    let progressView = ASProgressRingContainer()
     let tableNode: ASTableNode
     let divider = ASDisplayNode()
     var tokens: [PersistentToken] {
@@ -65,6 +66,7 @@ class TokenListRootNode: ASDisplayNode {
             backButton.setImage(UIImage(named: "android-back"), for: .normal)
             self.backButton = backButton
         }
+        addSubnode(progressView)
     }
 
     override func didLoad() {
@@ -87,6 +89,7 @@ class TokenListRootNode: ASDisplayNode {
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
         divider.style.preferredSize = CGSize(width: constrainedSize.max.width, height: 1)
         tableNode.style.preferredSize = CGSize(width: constrainedSize.max.width, height: constrainedSize.max.height)
+        progressView.style.preferredSize = CGSize(width: 44, height: 44)
         let button: ASButtonNode
         if let switchButton = self.switchButton {
             button = switchButton
@@ -98,9 +101,16 @@ class TokenListRootNode: ASDisplayNode {
                                                                bottom: 10,
                                                                right: CGFloat.infinity),
                                           child: button)
+        let progressInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: CGFloat.infinity,
+                                                               left: CGFloat.infinity,
+                                                               bottom: 10,
+                                                               right: 10),
+                                              child: progressView)
         let stackVertical = ASStackLayoutSpec.vertical()
+        stackVertical.spacing = 0
         stackVertical.children = [divider, tableNode]
-        return ASOverlayLayoutSpec(child: stackVertical, overlay: backInset)
+        let rootOverlay = ASOverlayLayoutSpec(child: stackVertical, overlay: backInset)
+        return ASOverlayLayoutSpec(child: rootOverlay, overlay: progressInset)
     }
 
     @objc func backButtonPressed() {
@@ -125,6 +135,16 @@ class TokenListRootNode: ASDisplayNode {
                 print("failed to error")
             }
         }
+
+        let displayTime = DisplayTime.currentDisplayTime()
+        let lastRefreshTime = tokens.reduce(.distantPast) { (lastRefreshTime, persistentToken) in
+            max(lastRefreshTime, persistentToken.lastRefreshTime(before: displayTime))
+        }
+        let nextRefreshTime = tokens.reduce(.distantFuture) { (nextRefreshTime, persistentToken) in
+            min(nextRefreshTime, persistentToken.nextRefreshTime(after: displayTime))
+        }
+        let progressRingVM = ProgressRingViewModel(startTime: lastRefreshTime, endTime: nextRefreshTime)
+        progressView.progressView?.update(with: progressRingVM)
         tableNode.reloadData()
         refreshControl.endRefreshing()
     }

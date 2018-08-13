@@ -50,7 +50,7 @@ class TokensCellNode: ASCellNode {
                                                alignItems: .center,
                                                children: [headerInset])
         let backgroundLayer = ASOverlayLayoutSpec(child: container, overlay: headerVertical)
-        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
+        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 10, bottom: 5, right: 10),
                                  child: backgroundLayer)
     }
 }

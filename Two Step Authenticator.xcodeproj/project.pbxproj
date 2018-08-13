@@ -56,6 +56,12 @@
 		00E26CEC2121D01E007A2519 /* KeyboardNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */; };
 		00E26CED2121D03A007A2519 /* KeyboardNodeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */; };
 		00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A4211C24D500CFD01F /* KeyboardKeyView.swift */; };
+		00E26CF02121DE5A007A2519 /* ProgressRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CEF2121DE59007A2519 /* ProgressRingView.swift */; };
+		00E26CF12121DE5A007A2519 /* ProgressRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CEF2121DE59007A2519 /* ProgressRingView.swift */; };
+		00E26CF32121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */; };
+		00E26CF42121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */; };
+		00E26CF62121E4D7007A2519 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF52121E4D7007A2519 /* DisplayTime.swift */; };
+		00E26CF72121E4D7007A2519 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF52121E4D7007A2519 /* DisplayTime.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +123,9 @@
 		000112E02120276600CFD01F /* TSAKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TSAKeyboard.entitlements; sourceTree = "<group>"; };
 		00E26CE52121BBBE007A2519 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		00E26CE82121BE19007A2519 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		00E26CEF2121DE59007A2519 /* ProgressRingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingView.swift; sourceTree = "<group>"; };
+		00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASProgressRingContainer.swift; sourceTree = "<group>"; };
+		00E26CF52121E4D7007A2519 /* DisplayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTime.swift; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +211,7 @@
 				000112D6211EC25200CFD01F /* TokenDetails.swift */,
 				000112DC2120200000CFD01F /* TokenStore.swift */,
 				00E26CE82121BE19007A2519 /* UIImage.swift */,
+				00E26CF52121E4D7007A2519 /* DisplayTime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,10 +230,12 @@
 		00011273211AD20700CFD01F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00E26CEF2121DE59007A2519 /* ProgressRingView.swift */,
 				0001129C211B439E00CFD01F /* TokenListRootNode.swift */,
 				000112C4211DD0D100CFD01F /* TokensRootNode.swift */,
 				000112CA211E09BF00CFD01F /* TokenCellNode.swift */,
 				000112D9211ECAD200CFD01F /* TokensCellNode.swift */,
+				00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,11 +532,14 @@
 			files = (
 				000112AC211C2DE900CFD01F /* Key.swift in Sources */,
 				00E26CE92121BE19007A2519 /* UIImage.swift in Sources */,
+				00E26CF32121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */,
 				0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */,
 				00E26CEB2121CF6A007A2519 /* KeyboardViewController.swift in Sources */,
+				00E26CF02121DE5A007A2519 /* ProgressRingView.swift in Sources */,
 				00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */,
 				000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
+				00E26CF62121E4D7007A2519 /* DisplayTime.swift in Sources */,
 				000112D7211EC25200CFD01F /* TokenDetails.swift in Sources */,
 				000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				00011277211AD20700CFD01F /* AppDelegate.swift in Sources */,
@@ -558,18 +573,21 @@
 				00E26CEA2121BE19007A2519 /* UIImage.swift in Sources */,
 				000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
 				000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
+				00E26CF72121E4D7007A2519 /* DisplayTime.swift in Sources */,
 				0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112DB211ECAD200CFD01F /* TokensCellNode.swift in Sources */,
 				000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */,
 				000112BC211D7A8900CFD01F /* Settings.swift in Sources */,
 				000112C9211E017200CFD01F /* AddTokenViewController.swift in Sources */,
 				0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
+				00E26CF42121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */,
 				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
 				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
 				00E26CE72121BBBF007A2519 /* Fonts.swift in Sources */,
 				00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */,
 				000112DE2120200000CFD01F /* TokenStore.swift in Sources */,
 				000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */,
+				00E26CF12121DE5A007A2519 /* ProgressRingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
