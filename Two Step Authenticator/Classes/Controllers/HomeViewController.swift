@@ -18,6 +18,7 @@ class HomeViewController: ASViewController<ASTableNode> {
         node.view.separatorStyle = .none
         node.backgroundColor = Colours.defaultViewControllerBackground
         title = Strings.Home.title
+        node.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,19 +43,15 @@ extension HomeViewController: ASTableDataSource, ASTableDelegate {
     }
 
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-        let cell = ASTextCellNode()
-        cell.textNode.attributedText = String.formatLabel(text: CellType.cells()[indexPath.row].rawValue,
-                                                          font: Fonts.standardTextFont,
-                                                          textColour: Colours.defaultText)
+        let cell = HomeCell(text: CellType.cells()[indexPath.row].rawValue)
+        cell.style.preferredSize = CGSize(width: tableNode.frame.width, height: 64)
         return cell
     }
 
     func tableNode(_ tableNode: ASTableNode, didSelectRowAt indexPath: IndexPath) {
         switch CellType.cells()[indexPath.row] {
-        case .aboutCell:
-            break
         case .howToCell:
-            break
+            navigationController?.pushViewController(HowViewController(), animated: true)
         case .tokenCell:
             let tokensViewController = TokensViewController()
             navigationController?.pushViewController(tokensViewController, animated: true)
@@ -66,10 +63,9 @@ extension HomeViewController: ASTableDataSource, ASTableDelegate {
 private enum CellType: String {
     case howToCell = "How to setup"
     case tokenCell = "Tokens"
-    case aboutCell = "About"
 
     static func cells() -> [CellType] {
-        let cellTypes: [CellType] = [.howToCell, .tokenCell, .aboutCell]
+        let cellTypes: [CellType] = [.howToCell, .tokenCell]
         return cellTypes
     }
 
