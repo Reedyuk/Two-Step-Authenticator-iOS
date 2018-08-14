@@ -29,19 +29,11 @@ class KeyboardViewController: UIInputViewController {
                                                   toItem: nil,
                                                   attribute: .notAnAttribute,
                                                   multiplier: 0.0,
-                                                  constant: 220)
+                                                  constant: 180)
         heightConstraint.priority = .required - 1
         view.addConstraint(heightConstraint)
         _heightConstraint = heightConstraint
         loadInterface()
-    }
-
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
     }
 
     func loadInterface() {
