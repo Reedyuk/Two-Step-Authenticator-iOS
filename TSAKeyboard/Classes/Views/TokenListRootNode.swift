@@ -30,17 +30,18 @@ class TokenListRootNode: ASDisplayNode {
         refreshControl.addTarget(self,
                                  action: #selector(TokenListRootNode.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.black
+        refreshControl.tintColor = Colours.refreshControl
         return refreshControl
     }()
 
     private let showSwitch = true
+    private var previousLastTime: Date?
 
     override init() {
         tableNode = ASTableNode()
         super.init()
         addSubnode(divider)
-        divider.backgroundColor = UIColor.lightGray
+        divider.backgroundColor = Colours.divider
         addSubnode(tableNode)
         tableNode.delegate = self
         tableNode.dataSource = self
@@ -70,7 +71,8 @@ class TokenListRootNode: ASDisplayNode {
     }
 
     override func didLoad() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+        refreshTokens()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.refreshTokens()
         })
     }
@@ -82,7 +84,7 @@ class TokenListRootNode: ASDisplayNode {
         button.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         button.layer.shadowRadius = 0.0
         button.layer.shadowOpacity = 0.35
-        button.backgroundColor = .lightGray
+        button.backgroundColor = Colours.defaultButtonBackground
         button.style.preferredSize = CGSize(width: 44, height: 44)
     }
 
@@ -135,7 +137,6 @@ class TokenListRootNode: ASDisplayNode {
                 print("failed to error")
             }
         }
-
         let displayTime = DisplayTime.currentDisplayTime()
         let lastRefreshTime = tokens.reduce(.distantPast) { (lastRefreshTime, persistentToken) in
             max(lastRefreshTime, persistentToken.lastRefreshTime(before: displayTime))
@@ -145,7 +146,18 @@ class TokenListRootNode: ASDisplayNode {
         }
         let progressRingVM = ProgressRingViewModel(startTime: lastRefreshTime, endTime: nextRefreshTime)
         progressView.progressView?.update(with: progressRingVM)
-        tableNode.reloadData()
+        var refreshTable = false
+        if let prevTime = previousLastTime {
+            if prevTime.compare(lastRefreshTime) != .orderedSame {
+                refreshTable = true
+            }
+        } else {
+            refreshTable = true
+        }
+        if refreshTable {
+            tableNode.reloadSections([0], with: .automatic)
+        }
+        previousLastTime = lastRefreshTime
         refreshControl.endRefreshing()
     }
 }

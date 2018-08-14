@@ -11,6 +11,7 @@ import Foundation
 public struct Strings {
     struct ActionButtons {
         public static let back = "Back"
+        public static let okButton = "OK"
     }
 
     struct Home {
@@ -25,10 +26,10 @@ public struct Strings {
         public static let title = "Add Token"
     }
 
-    struct KeyboardButtons {
-        public static let shift = "Shift"
-        public static let space = "    Space    "
-        public static let auth = "Auth"
-        public static let returnKey = "Return"
+    struct Errors {
+        public static let tokenSaveFailedTitle = "Token Save Failure"
+        public static let tokenSaveFailedMessage = "We could'nt save the token, please try again."
+        public static let tokenDetailsInvalidTitle = "Token Details Invalid"
+        public static let tokenDetailsInvalidMessage = "Some token details are invalid"
     }
 }

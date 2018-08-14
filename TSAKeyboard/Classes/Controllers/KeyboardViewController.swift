@@ -10,7 +10,6 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
     private weak var _heightConstraint: NSLayoutConstraint?
-    var keyboardNodeViewController: KeyboardNodeViewController?
     var tokenListViewController: TokenListViewController?
 
     override func viewDidLoad() {
@@ -46,18 +45,6 @@ class KeyboardViewController: UIInputViewController {
     }
 
     func loadInterface() {
-        if keyboardNodeViewController == nil {
-//            let keyboardNodeViewController = KeyboardNodeViewController(textDocumentProxy: textDocumentProxy,
-//                                                                        parentInputViewController: self)
-//            view.addSubview(keyboardNodeViewController.view)
-//            self.keyboardNodeViewController = keyboardNodeViewController
-//            let seperator = UIView(frame: CGRect(x: 0,
-//                                                 y: 0,
-//                                                 width: view.frame.width,
-//                                                 height: 1))
-//            seperator.backgroundColor = UIColor.lightGray
-//            self.keyboardNodeViewController?.view.addSubview(seperator)
-        }
         if tokenListViewController == nil {
             let tokenListViewController = TokenListViewController(textDocumentProxy: textDocumentProxy,
                                                                   keyboardViewController: self)

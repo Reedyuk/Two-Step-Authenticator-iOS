@@ -14,20 +14,9 @@
 		00011278211AD20700CFD01F /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011275211AD20700CFD01F /* Urls.swift */; };
 		00011284211AD25F00CFD01F /* TSAKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0001127D211AD25F00CFD01F /* TSAKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011293211B09C400CFD01F /* KeyboardViewController.swift */; };
-		0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011299211B439700CFD01F /* TokenListViewController.swift */; };
-		0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011299211B439700CFD01F /* TokenListViewController.swift */; };
-		0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001129C211B439E00CFD01F /* TokenListRootNode.swift */; };
-		0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001129C211B439E00CFD01F /* TokenListRootNode.swift */; };
 		0001129F211B460000CFD01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00011263211AD17B00CFD01F /* Assets.xcassets */; };
-		000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */; };
-		000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A4211C24D500CFD01F /* KeyboardKeyView.swift */; };
-		000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */; };
 		000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A8211C272A00CFD01F /* String+Formatting.swift */; };
 		000112AA211C272A00CFD01F /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A8211C272A00CFD01F /* String+Formatting.swift */; };
-		000112AC211C2DE900CFD01F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AB211C2DE900CFD01F /* Key.swift */; };
-		000112AD211C2DE900CFD01F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AB211C2DE900CFD01F /* Key.swift */; };
-		000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AE211CB81500CFD01F /* SpecialKey.swift */; };
-		000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112AE211CB81500CFD01F /* SpecialKey.swift */; };
 		000112B8211D721400CFD01F /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B7211D721400CFD01F /* Colours.swift */; };
 		000112B9211D721400CFD01F /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B7211D721400CFD01F /* Colours.swift */; };
 		000112BA211D79EC00CFD01F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001126F211AD20700CFD01F /* Strings.swift */; };
@@ -39,8 +28,8 @@
 		000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C4211DD0D100CFD01F /* TokensRootNode.swift */; };
 		000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C7211DFFF700CFD01F /* AddTokenViewController.swift */; };
 		000112C9211E017200CFD01F /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112C7211DFFF700CFD01F /* AddTokenViewController.swift */; };
-		000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* TokenCellNode.swift */; };
-		000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* TokenCellNode.swift */; };
+		000112CB211E09BF00CFD01F /* AddTokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* AddTokenCellNode.swift */; };
+		000112CC211E09BF00CFD01F /* AddTokenCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112CA211E09BF00CFD01F /* AddTokenCellNode.swift */; };
 		000112D5211EC14B00CFD01F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112BB211D7A8900CFD01F /* Settings.swift */; };
 		000112D7211EC25200CFD01F /* TokenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D6211EC25200CFD01F /* TokenDetails.swift */; };
 		000112D8211EC25200CFD01F /* TokenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112D6211EC25200CFD01F /* TokenDetails.swift */; };
@@ -50,18 +39,19 @@
 		000112DE2120200000CFD01F /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112DC2120200000CFD01F /* TokenStore.swift */; };
 		00E26CE62121BBBE007A2519 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE52121BBBE007A2519 /* Fonts.swift */; };
 		00E26CE72121BBBF007A2519 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE52121BBBE007A2519 /* Fonts.swift */; };
-		00E26CE92121BE19007A2519 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE82121BE19007A2519 /* UIImage.swift */; };
-		00E26CEA2121BE19007A2519 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CE82121BE19007A2519 /* UIImage.swift */; };
 		00E26CEB2121CF6A007A2519 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00011293211B09C400CFD01F /* KeyboardViewController.swift */; };
-		00E26CEC2121D01E007A2519 /* KeyboardNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */; };
-		00E26CED2121D03A007A2519 /* KeyboardNodeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */; };
-		00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112A4211C24D500CFD01F /* KeyboardKeyView.swift */; };
 		00E26CF02121DE5A007A2519 /* ProgressRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CEF2121DE59007A2519 /* ProgressRingView.swift */; };
 		00E26CF12121DE5A007A2519 /* ProgressRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CEF2121DE59007A2519 /* ProgressRingView.swift */; };
 		00E26CF32121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */; };
 		00E26CF42121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */; };
 		00E26CF62121E4D7007A2519 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF52121E4D7007A2519 /* DisplayTime.swift */; };
 		00E26CF72121E4D7007A2519 /* DisplayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF52121E4D7007A2519 /* DisplayTime.swift */; };
+		00E26CF92122F2A5007A2519 /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF82122F2A5007A2519 /* TokenListViewController.swift */; };
+		00E26CFA2122F2A5007A2519 /* TokenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CF82122F2A5007A2519 /* TokenListViewController.swift */; };
+		00E26CFC2122F51E007A2519 /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CFB2122F51E007A2519 /* TokenListRootNode.swift */; };
+		00E26CFD2122F51E007A2519 /* TokenListRootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CFB2122F51E007A2519 /* TokenListRootNode.swift */; };
+		00E26CFF2122FFC9007A2519 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CFE2122FFC9007A2519 /* UIViewController.swift */; };
+		00E26D002122FFC9007A2519 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E26CFE2122FFC9007A2519 /* UIViewController.swift */; };
 		3F6DF356A2AA1ADAD7E48905 /* Pods_Two_Step_Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */; };
 		4FB179709B4A02D310DFD13F /* Pods_TSAKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDECEF22C48CF9698292907E /* Pods_TSAKeyboard.framework */; };
 /* End PBXBuildFile section */
@@ -101,31 +91,26 @@
 		0001127D211AD25F00CFD01F /* TSAKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TSAKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		00011281211AD25F00CFD01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00011293211B09C400CFD01F /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		00011299211B439700CFD01F /* TokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListViewController.swift; sourceTree = "<group>"; };
-		0001129C211B439E00CFD01F /* TokenListRootNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListRootNode.swift; sourceTree = "<group>"; };
-		000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNodeViewController.swift; sourceTree = "<group>"; };
-		000112A4211C24D500CFD01F /* KeyboardKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyView.swift; sourceTree = "<group>"; };
-		000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNodeRowCell.swift; sourceTree = "<group>"; };
 		000112A8211C272A00CFD01F /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
-		000112AB211C2DE900CFD01F /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		000112AE211CB81500CFD01F /* SpecialKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialKey.swift; sourceTree = "<group>"; };
 		000112B7211D721400CFD01F /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		000112BB211D7A8900CFD01F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		000112BF211DBC2E00CFD01F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		000112C1211DD01E00CFD01F /* TokensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewController.swift; sourceTree = "<group>"; };
 		000112C4211DD0D100CFD01F /* TokensRootNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensRootNode.swift; sourceTree = "<group>"; };
 		000112C7211DFFF700CFD01F /* AddTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenViewController.swift; sourceTree = "<group>"; };
-		000112CA211E09BF00CFD01F /* TokenCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCellNode.swift; sourceTree = "<group>"; };
+		000112CA211E09BF00CFD01F /* AddTokenCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenCellNode.swift; sourceTree = "<group>"; };
 		000112D6211EC25200CFD01F /* TokenDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDetails.swift; sourceTree = "<group>"; };
 		000112D9211ECAD200CFD01F /* TokensCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensCellNode.swift; sourceTree = "<group>"; };
 		000112DC2120200000CFD01F /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		000112DF2120273E00CFD01F /* Two Step Authenticator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Two Step Authenticator.entitlements"; sourceTree = "<group>"; };
 		000112E02120276600CFD01F /* TSAKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TSAKeyboard.entitlements; sourceTree = "<group>"; };
 		00E26CE52121BBBE007A2519 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		00E26CE82121BE19007A2519 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		00E26CEF2121DE59007A2519 /* ProgressRingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingView.swift; sourceTree = "<group>"; };
 		00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASProgressRingContainer.swift; sourceTree = "<group>"; };
 		00E26CF52121E4D7007A2519 /* DisplayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTime.swift; sourceTree = "<group>"; };
+		00E26CF82122F2A5007A2519 /* TokenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListViewController.swift; sourceTree = "<group>"; };
+		00E26CFB2122F51E007A2519 /* TokenListRootNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListRootNode.swift; sourceTree = "<group>"; };
+		00E26CFE2122FFC9007A2519 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0D5BAF25DEF3A2185EBFBD64 /* Pods_Two_Step_Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Step_Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E4D773B8C58B133678A4 /* Pods-TSAKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSAKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSAKeyboard/Pods-TSAKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF997A41D062E29D145778E /* Pods-Two Step Authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Step Authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Step Authenticator/Pods-Two Step Authenticator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,11 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				000112A8211C272A00CFD01F /* String+Formatting.swift */,
-				000112AB211C2DE900CFD01F /* Key.swift */,
-				000112AE211CB81500CFD01F /* SpecialKey.swift */,
 				000112D6211EC25200CFD01F /* TokenDetails.swift */,
 				000112DC2120200000CFD01F /* TokenStore.swift */,
-				00E26CE82121BE19007A2519 /* UIImage.swift */,
 				00E26CF52121E4D7007A2519 /* DisplayTime.swift */,
 			);
 			path = Models;
@@ -219,7 +201,7 @@
 		00011272211AD20700CFD01F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00011299211B439700CFD01F /* TokenListViewController.swift */,
+				00E26CFE2122FFC9007A2519 /* UIViewController.swift */,
 				000112BF211DBC2E00CFD01F /* HomeViewController.swift */,
 				000112C1211DD01E00CFD01F /* TokensViewController.swift */,
 				000112C7211DFFF700CFD01F /* AddTokenViewController.swift */,
@@ -231,9 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				00E26CEF2121DE59007A2519 /* ProgressRingView.swift */,
-				0001129C211B439E00CFD01F /* TokenListRootNode.swift */,
 				000112C4211DD0D100CFD01F /* TokensRootNode.swift */,
-				000112CA211E09BF00CFD01F /* TokenCellNode.swift */,
+				000112CA211E09BF00CFD01F /* AddTokenCellNode.swift */,
 				000112D9211ECAD200CFD01F /* TokensCellNode.swift */,
 				00E26CF22121DEC9007A2519 /* ASProgressRingContainer.swift */,
 			);
@@ -278,8 +259,8 @@
 		00011291211B09C400CFD01F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				00E26CF82122F2A5007A2519 /* TokenListViewController.swift */,
 				00011293211B09C400CFD01F /* KeyboardViewController.swift */,
-				000112A2211C21E200CFD01F /* KeyboardNodeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,8 +268,7 @@
 		00011294211B09C400CFD01F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				000112A4211C24D500CFD01F /* KeyboardKeyView.swift */,
-				000112A6211C252000CFD01F /* KeyboardNodeRowCell.swift */,
+				00E26CFB2122F51E007A2519 /* TokenListRootNode.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,33 +510,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000112AC211C2DE900CFD01F /* Key.swift in Sources */,
-				00E26CE92121BE19007A2519 /* UIImage.swift in Sources */,
+				00E26CF92122F2A5007A2519 /* TokenListViewController.swift in Sources */,
 				00E26CF32121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */,
-				0001129A211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112C8211DFFF700CFD01F /* AddTokenViewController.swift in Sources */,
 				00E26CEB2121CF6A007A2519 /* KeyboardViewController.swift in Sources */,
 				00E26CF02121DE5A007A2519 /* ProgressRingView.swift in Sources */,
-				00E26CEE2121D051007A2519 /* KeyboardKeyView.swift in Sources */,
-				000112CB211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
+				000112CB211E09BF00CFD01F /* AddTokenCellNode.swift in Sources */,
 				00E26CF62121E4D7007A2519 /* DisplayTime.swift in Sources */,
 				000112D7211EC25200CFD01F /* TokenDetails.swift in Sources */,
 				000112A9211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				00011277211AD20700CFD01F /* AppDelegate.swift in Sources */,
 				000112DA211ECAD200CFD01F /* TokensCellNode.swift in Sources */,
-				0001129D211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
+				00E26CFC2122F51E007A2519 /* TokenListRootNode.swift in Sources */,
 				000112C5211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
 				000112C0211DBC2E00CFD01F /* HomeViewController.swift in Sources */,
+				00E26CFF2122FFC9007A2519 /* UIViewController.swift in Sources */,
 				000112DD2120200000CFD01F /* TokenStore.swift in Sources */,
 				000112D5211EC14B00CFD01F /* Settings.swift in Sources */,
-				000112AF211CB81500CFD01F /* SpecialKey.swift in Sources */,
 				00011276211AD20700CFD01F /* Strings.swift in Sources */,
 				000112B8211D721400CFD01F /* Colours.swift in Sources */,
 				000112C2211DD01E00CFD01F /* TokensViewController.swift in Sources */,
 				00E26CE62121BBBE007A2519 /* Fonts.swift in Sources */,
-				00E26CEC2121D01E007A2519 /* KeyboardNodeViewController.swift in Sources */,
 				00011278211AD20700CFD01F /* Urls.swift in Sources */,
-				00E26CED2121D03A007A2519 /* KeyboardNodeRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,26 +542,21 @@
 				000112AA211C272A00CFD01F /* String+Formatting.swift in Sources */,
 				000112D8211EC25200CFD01F /* TokenDetails.swift in Sources */,
 				000112BA211D79EC00CFD01F /* Strings.swift in Sources */,
+				00E26D002122FFC9007A2519 /* UIViewController.swift in Sources */,
 				000112C3211DD01E00CFD01F /* TokensViewController.swift in Sources */,
 				000112B9211D721400CFD01F /* Colours.swift in Sources */,
-				000112B0211CB81500CFD01F /* SpecialKey.swift in Sources */,
-				00E26CEA2121BE19007A2519 /* UIImage.swift in Sources */,
-				000112CC211E09BF00CFD01F /* TokenCellNode.swift in Sources */,
+				00E26CFD2122F51E007A2519 /* TokenListRootNode.swift in Sources */,
+				000112CC211E09BF00CFD01F /* AddTokenCellNode.swift in Sources */,
 				000112C6211DD0D100CFD01F /* TokensRootNode.swift in Sources */,
 				00E26CF72121E4D7007A2519 /* DisplayTime.swift in Sources */,
-				0001129B211B439700CFD01F /* TokenListViewController.swift in Sources */,
 				000112DB211ECAD200CFD01F /* TokensCellNode.swift in Sources */,
-				000112A3211C21E200CFD01F /* KeyboardNodeViewController.swift in Sources */,
 				000112BC211D7A8900CFD01F /* Settings.swift in Sources */,
 				000112C9211E017200CFD01F /* AddTokenViewController.swift in Sources */,
-				0001129E211B439E00CFD01F /* TokenListRootNode.swift in Sources */,
 				00E26CF42121DEC9007A2519 /* ASProgressRingContainer.swift in Sources */,
-				000112A5211C24D500CFD01F /* KeyboardKeyView.swift in Sources */,
-				000112AD211C2DE900CFD01F /* Key.swift in Sources */,
 				00E26CE72121BBBF007A2519 /* Fonts.swift in Sources */,
+				00E26CFA2122F2A5007A2519 /* TokenListViewController.swift in Sources */,
 				00011296211B09C400CFD01F /* KeyboardViewController.swift in Sources */,
 				000112DE2120200000CFD01F /* TokenStore.swift in Sources */,
-				000112A7211C252000CFD01F /* KeyboardNodeRowCell.swift in Sources */,
 				00E26CF12121DE5A007A2519 /* ProgressRingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

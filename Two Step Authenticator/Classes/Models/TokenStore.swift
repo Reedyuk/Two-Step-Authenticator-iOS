@@ -38,7 +38,7 @@ class KeychainTokenStore: TokenStore {
             let indexOfA = sortedIdentifiers.index(of: $0.identifier)
             let indexOfB = sortedIdentifiers.index(of: $1.identifier)
             switch (indexOfA, indexOfB) {
-            case let (.some(iA), .some(iB)) where iA < iB:
+            case let (.some(indexA), .some(indexB)) where indexA < indexB:
                 return true
             default:
                 return false

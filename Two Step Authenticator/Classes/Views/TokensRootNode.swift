@@ -13,6 +13,7 @@ import OneTimePassword
 class TokensRootNode: ASDisplayNode {
 
     let tableNode: ASTableNode
+    let progressView = ASProgressRingContainer()
     var tokens: [PersistentToken] {
         if let store = Settings.sharedInstance.store {
             return store.persistentTokens
@@ -26,7 +27,7 @@ class TokensRootNode: ASDisplayNode {
         refreshControl.addTarget(self,
                                  action: #selector(TokensRootNode.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.black
+        refreshControl.tintColor = Colours.refreshControl
         return refreshControl
     }()
 
@@ -34,21 +35,30 @@ class TokensRootNode: ASDisplayNode {
         tableNode = ASTableNode()
         super.init()
         addSubnode(tableNode)
-        tableNode.backgroundColor = UIColor.gray
+        tableNode.backgroundColor = Colours.defaultViewControllerBackground
         tableNode.view.separatorStyle = .none
         tableNode.view.addSubview(refreshControl)
         tableNode.delegate = self
         tableNode.dataSource = self
+        addSubnode(progressView)
     }
 
     override func didLoad() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (_) in
+        refreshTokens()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.refreshTokens()
         })
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        return ASInsetLayoutSpec(insets: UIEdgeInsets.zero, child: tableNode)
+        progressView.style.preferredSize = CGSize(width: 44, height: 44)
+        let progressInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: CGFloat.infinity,
+                                                                   left: CGFloat.infinity,
+                                                                   bottom: 10,
+                                                                   right: 10),
+                                              child: progressView)
+        let insetLayout = ASInsetLayoutSpec(insets: UIEdgeInsets.zero, child: tableNode)
+        return ASOverlayLayoutSpec(child: insetLayout, overlay: progressInset)
     }
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
@@ -67,6 +77,15 @@ class TokensRootNode: ASDisplayNode {
         }
         tableNode.reloadData()
         refreshControl.endRefreshing()
+        let displayTime = DisplayTime.currentDisplayTime()
+        let lastRefreshTime = tokens.reduce(.distantPast) { (lastRefreshTime, persistentToken) in
+            max(lastRefreshTime, persistentToken.lastRefreshTime(before: displayTime))
+        }
+        let nextRefreshTime = tokens.reduce(.distantFuture) { (nextRefreshTime, persistentToken) in
+            min(nextRefreshTime, persistentToken.nextRefreshTime(after: displayTime))
+        }
+        let progressRingVM = ProgressRingViewModel(startTime: lastRefreshTime, endTime: nextRefreshTime)
+        progressView.progressView?.update(with: progressRingVM)
     }
 }
 

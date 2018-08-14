@@ -11,6 +11,7 @@ import UIKit
 import AsyncDisplayKit
 import OneTimePassword
 
+//shared with keyboard and app
 class TokensCellNode: ASCellNode {
     let token: Token
     let tokenName = ASTextNode()
@@ -22,33 +23,27 @@ class TokensCellNode: ASCellNode {
         super.init()
         selectionStyle = .none
         addSubnode(container)
-        container.backgroundColor = UIColor.lightGray
+        container.backgroundColor = Colours.defaultButtonBackground
         container.cornerRadius = 5
         container.clipsToBounds = true
         addSubnode(tokenName)
         addSubnode(tokenValue)
-        tokenName.attributedText = String.formatLabel(text: token.issuer,
-                                                      font: UIFont.systemFont(ofSize: 18),
-                                                      textColour: UIColor.white)
+        tokenName.attributedText = String.formatLabel(text: "\(token.issuer) \(token.name)",
+                                                      font: Fonts.standardTextFontLight.withSize(12),
+                                                      textColour: Colours.defaultText)
         if let currentPassword = token.currentPassword {
             tokenValue.attributedText = String.formatLabel(text: currentPassword,
                                                            font: UIFont.systemFont(ofSize: 18),
-                                                           textColour: UIColor.white)
+                                                           textColour: Colours.defaultText)
         }
     }
 
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        let headerStackSpec = ASStackLayoutSpec(direction: .horizontal,
-                                                spacing: 10,
-                                                justifyContent: .start,
-                                                alignItems: .center,
-                                                children: [tokenName, tokenValue])
-        let headerInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10), child: headerStackSpec)
         let headerVertical = ASStackLayoutSpec(direction: .vertical,
-                                               spacing: 0,
+                                               spacing: 5,
                                                justifyContent: .center,
                                                alignItems: .center,
-                                               children: [headerInset])
+                                               children: [tokenName, tokenValue])
         let backgroundLayer = ASOverlayLayoutSpec(child: container, overlay: headerVertical)
         return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 10, bottom: 5, right: 10),
                                  child: backgroundLayer)

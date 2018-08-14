@@ -11,7 +11,7 @@ import UIKit
 import AsyncDisplayKit
 import Base32
 
-class TokenCellNode: ASCellNode {
+class AddTokenCellNode: ASCellNode {
 
     let accountName = ASEditableTextNode()
     let accountUserName = ASEditableTextNode()
@@ -27,7 +27,7 @@ class TokenCellNode: ASCellNode {
         addSubnode(secretKey)
         addSubnode(addButton)
 
-        styleInput(input: accountName, placeholder: "Account Name")
+        styleInput(input: accountName, placeholder: "Account Name e.g. Google, AWS")
         styleInput(input: accountUserName, placeholder: "Account UserName/Email")
         styleInput(input: secretKey, placeholder: "Secret Key")
 

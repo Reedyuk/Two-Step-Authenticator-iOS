@@ -11,9 +11,12 @@ import AsyncDisplayKit
 
 class TokensViewController: ASViewController<TokensRootNode> {
 
+    private var myToolbar: UIToolbar!
+    private var progressRingView: ProgressRingView?
+
     init() {
         super.init(node: TokensRootNode())
-        node.backgroundColor = UIColor.gray
+        node.backgroundColor = Colours.defaultViewControllerBackground
         title = Strings.TokensViewController.title
         node.tableNode.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }

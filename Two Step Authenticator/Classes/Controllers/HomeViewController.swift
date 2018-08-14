@@ -15,7 +15,8 @@ class HomeViewController: ASViewController<ASTableNode> {
         super.init(node: ASTableNode())
         node.delegate = self
         node.dataSource = self
-        node.backgroundColor = UIColor.white
+        node.view.separatorStyle = .none
+        node.backgroundColor = Colours.defaultViewControllerBackground
         title = Strings.Home.title
     }
 
@@ -42,7 +43,9 @@ extension HomeViewController: ASTableDataSource, ASTableDelegate {
 
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
         let cell = ASTextCellNode()
-        cell.text = CellType.cells()[indexPath.row].rawValue
+        cell.textNode.attributedText = String.formatLabel(text: CellType.cells()[indexPath.row].rawValue,
+                                                          font: Fonts.standardTextFont,
+                                                          textColour: Colours.defaultText)
         return cell
     }
 

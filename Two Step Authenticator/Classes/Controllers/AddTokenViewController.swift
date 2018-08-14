@@ -17,7 +17,7 @@ class AddTokenViewController: ASViewController<ASTableNode> {
 
     init() {
         super.init(node: ASTableNode())
-        node.backgroundColor = UIColor.gray
+        node.backgroundColor = Colours.defaultViewControllerBackground
         node.delegate = self
         node.dataSource = self
         node.allowsSelection = false
@@ -42,7 +42,7 @@ extension AddTokenViewController: ASTableDataSource, ASTableDelegate {
     }
 
     func tableNode(_ tableNode: ASTableNode, nodeForRowAt indexPath: IndexPath) -> ASCellNode {
-        let cell = TokenCellNode(addTokenViewController: self)
+        let cell = AddTokenCellNode(addTokenViewController: self)
         return cell
     }
 
@@ -54,16 +54,17 @@ extension AddTokenViewController: ASTableDataSource, ASTableDelegate {
 extension AddTokenViewController {
 
     func submitToken(tokenDetails: TokenDetails) {
-        //validate form.
         if let token = validate(tokenDetails: tokenDetails) {
             do {
                 try Settings.sharedInstance.store?.addToken(token)
             } catch {
-                print("failed to save")
+                showSimpleAlert(title: Strings.Errors.tokenSaveFailedTitle,
+                                message: Strings.Errors.tokenSaveFailedMessage)
             }
             navigationController?.popViewController(animated: true)
         } else {
-            //invalid token.
+            showSimpleAlert(title: Strings.Errors.tokenDetailsInvalidTitle,
+                            message: Strings.Errors.tokenDetailsInvalidMessage)
         }
     }
 
