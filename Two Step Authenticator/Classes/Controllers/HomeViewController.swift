@@ -64,7 +64,6 @@ extension HomeViewController: ASTableDataSource, ASTableDelegate {
 }
 
 private enum CellType: String {
-
     case howToCell = "How to setup"
     case tokenCell = "Tokens"
     case aboutCell = "About"
