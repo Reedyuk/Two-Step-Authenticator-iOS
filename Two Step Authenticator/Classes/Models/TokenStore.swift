@@ -23,7 +23,12 @@ class KeychainTokenStore: TokenStore {
     fileprivate let keychain: Keychain
     private let userDefaults: UserDefaults
     fileprivate(set) var persistentTokens: [PersistentToken]
-    private let keychainGroupName = "269C5Q4423.uk.co.andrewreed.Two-Step-Authenticator"
+    private var keychainGroupName: String {
+        if let appIdentifierPrefix = Bundle.main.infoDictionary!["AppIdentifierPrefix"] as? String {
+            return "\(appIdentifierPrefix)uk.co.andrewreed.Two-Step-Authenticator"
+        }
+        return ".uk.co.andrewreed.Two-Step-Authenticator"
+    }
 
     // Throws an error if the initial state could not be loaded from the keychain.
     init(keychain: Keychain, userDefaults: UserDefaults) throws {

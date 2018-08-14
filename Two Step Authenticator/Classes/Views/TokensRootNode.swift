@@ -66,6 +66,7 @@ class TokensRootNode: ASDisplayNode {
     }
 
     @objc func refreshTokens() {
+        progressView.isHidden = tokens.count == 0 ? true : false
         for token in tokens {
             do {
                 try Settings.sharedInstance.store?.deletePersistentToken(token)

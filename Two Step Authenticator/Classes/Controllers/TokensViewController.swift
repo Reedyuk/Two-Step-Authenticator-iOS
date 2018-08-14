@@ -11,9 +11,6 @@ import AsyncDisplayKit
 
 class TokensViewController: ASViewController<TokensRootNode> {
 
-    private var myToolbar: UIToolbar!
-    private var progressRingView: ProgressRingView?
-
     init() {
         super.init(node: TokensRootNode())
         node.backgroundColor = Colours.defaultViewControllerBackground
