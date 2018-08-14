@@ -16,3 +16,8 @@ Switch keyboard when you need to enter code and click the token.
 
 ![ScreenShot](https://raw.github.com/Reedyuk/Two-Step-Authenticator-iOS/master/Screenshots/keyboard.png)
 
+## License
+
+Two-Step-Authenticator was created by [Andrew Reed][] and is released under the [MIT License](LICENSE.md).
+
+[Andrew Reed]: http://www.andrewreed.co.uk
